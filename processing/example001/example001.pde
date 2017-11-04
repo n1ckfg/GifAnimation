@@ -1,3 +1,5 @@
+import gifAnimation.*;
+
 Gif origGif;
 ArrayList<Robot> robots;
 

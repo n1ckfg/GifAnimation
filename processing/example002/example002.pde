@@ -1,3 +1,5 @@
+import gifAnimation.*;
+
 Robot robot;
 
 void setup() {
