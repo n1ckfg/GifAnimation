@@ -4,23 +4,23 @@ let gif;
 let robots = [];
 
 function preload() {
-  gif = loadGif("./images/robot.gif");
+    gif = loadGif("./images/robot.gif");
 }
 
 function setup() {
-  createCanvas(960, 540);
+    createCanvas(960, 540);
 }
 
 function draw() {
-  background(127);
+    background(127);
 
-  if (mouseIsPressed) {
-  	robots.push(new Robot(mouseX, mouseY, gif));
-  }
+    if (mouseIsPressed) {
+  	    robots.push(new Robot(mouseX, mouseY, gif));
+    }
 
-  for (let i=0; i<robots.length; i++) {
-  	robots[i].run();
-  }
+    for (let i=0; i<robots.length; i++) {
+  	    robots[i].run();
+    }
 }
 
 function keyPressed() {
