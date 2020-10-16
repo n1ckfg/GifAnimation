@@ -1,11 +1,14 @@
 "use strict";
 
-var gif;
-var robots = [];
+let gif;
+let robots = [];
+
+function preload() {
+  gif = loadGif("./images/robot.gif");
+}
 
 function setup() {
   createCanvas(960, 540);
-  gif = loadGif("./images/robot.gif");
 }
 
 function draw() {
@@ -15,7 +18,7 @@ function draw() {
   	robots.push(new Robot(mouseX, mouseY, gif));
   }
 
-  for (var i=0; i<robots.length; i++) {
+  for (let i=0; i<robots.length; i++) {
   	robots[i].run();
   }
 }
