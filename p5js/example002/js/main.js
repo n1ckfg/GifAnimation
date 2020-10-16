@@ -1,18 +1,20 @@
 "use strict";
 
-var api = "https://api.giphy.com/v1/gifs/search?";
-var apiKey = "dc6zaTOxFJmzC";
-var query="rainbow";
-var gif = [];
-var anim = [];
-var ready = false;
+let api = "https://api.giphy.com/v1/gifs/search?";
+let apiKey = "dc6zaTOxFJmzC";
+let query="rainbow";
+let gif = [];
+let anim = [];
+let ready = false;
+
+function preload {
+  let url = api + "&api_key=" + apiKey + "&q=" + query;
+  loadJSON(url, gotData);
+}
 
 function setup() {
   createCanvas(640, 480);
   background(127);
-  
-  var url = api + "&api_key=" + apiKey + "&q=" + query;
-  loadJSON(url, gotData);
 }
 
 function draw() {
@@ -20,15 +22,15 @@ function draw() {
     anim.push(new Anim(mouseX, mouseY, gif[parseInt(random(gif.length))]));
   }
 
-  for (var i=0; i<anim.length; i++) {
+  for (let i=0; i<anim.length; i++) {
     anim[i].run();
     if (anim[i].y > height + 100) anim.splice(i, 1);
   }
 }
 
 function gotData(data) {
-  for (var i=0; i<data.data.length; i++) {
-    var url = data.data[i].images.original.url.split("?")[0];
+  for (let i=0; i<data.data.length; i++) {
+    let url = data.data[i].images.original.url.split("?")[0];
     console.log(url);
     gif.push(loadGif(url));
   }
