@@ -7,7 +7,7 @@ let gif = [];
 let anim = [];
 let ready = false;
 
-function preload {
+function preload() {
   let url = api + "&api_key=" + apiKey + "&q=" + query;
   loadJSON(url, gotData);
 }
