@@ -2,7 +2,7 @@
 
 let api = "https://api.giphy.com/v1/gifs/search?";
 let apiKey = "dc6zaTOxFJmzC";
-let query="rainbow";
+let query="bat";
 let gif = [];
 let anim = [];
 let ready = false;
